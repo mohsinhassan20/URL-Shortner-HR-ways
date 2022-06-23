@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortner online assesment for HR WAYS</title>
+  </head>
+
+  <body>
+    <style>
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+      form {
+        margin-left: 30vw;
+      }
+      input {
+        height: 40px;
+        background: brown;
+        display: block;
+        margin-bottom: 25px;
+
+        background-color: blue;
+        margin-left: 14vw;
+      }
+      #url {
+        margin-left: 5vw;
+        width: 400px;
+        background: #fff;
+        text-align: center;
+      }
+    </style>
+    <h1>URL Shortner for HR WAYS</h1>
+    <% if (locals.error) { %>
+    <p class="error"><%= error %></p>
+    <% } %>
+    <div style="border: ">
+      <form action="/" method="post">
+        <input id="url" type="url" name="url" placeholder="Paste URL Here" />
+        <input type="submit" value="Short URL :-)" />
+      </form>
+    </div>
+    <div class="short-url">
+      <% if (locals.short_url) { %>
+
+      <a href="<%= short_url %>"><%= short_url %> </a>
+      <% } %>
+    </div>
+  </body>
+</html>
